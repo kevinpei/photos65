@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane prefHeight="627.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="albumList.AlbumListController">
+   <children>
+      <BorderPane layoutX="-109.0" prefHeight="627.0" prefWidth="609.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="User">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#logOff" text="Log Off" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openAlbum" text="Open Album" />
+                    <MenuItem mnemonicParsing="false" onAction="#addAlbum" text="Add Album" />
+                        <MenuItem mnemonicParsing="false" onAction="#deleteAlbum" text="Remove Album" />
+                        <MenuItem mnemonicParsing="false" onAction="#renameAlbum" text="Rename Album" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" onAction="#help" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <TableView fx:id="albumTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="248.0" resizable="false" text="Name" />
+                <TableColumn fx:id="photoCountColumn" minWidth="0.0" prefWidth="121.0" resizable="false" text="Photo Count" />
+                  <TableColumn fx:id="earliestDateColumn" prefWidth="116.0" resizable="false" text="Earliest Date" />
+                  <TableColumn fx:id="latestDateColumn" prefWidth="144.0" resizable="false" text="Latest Date" />
+              </columns>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<AnchorPane prefHeight="627.0" prefWidth="609.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="adminSystem.AdminSystemController">
+   <children>
+      <BorderPane layoutX="-109.0" prefHeight="627.0" prefWidth="609.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="User">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Log Off" onAction="#logOff" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Add User" onAction="#addUser" />
+                        <MenuItem mnemonicParsing="false" text="Remove User" onAction="#deleteUser" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" onAction="#help"  />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" fx:id="userTable">
+              <columns>
+                <TableColumn prefWidth="308.0" resizable="false" text="Username" fx:id="usernameColumn"/>
+                <TableColumn minWidth="0.0" prefWidth="180.0" resizable="false" text="Number of Albums" fx:id="albumsCreatedColumn"/>
+                  <TableColumn prefWidth="120.0" resizable="false" text="Date Created" fx:id="dateCreatedColumn"/>
+              </columns>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

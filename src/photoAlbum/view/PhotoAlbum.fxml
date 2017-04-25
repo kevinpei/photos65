@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane prefHeight="627.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photoAlbum.PhotoAlbumController">
+   <children>
+      <BorderPane layoutX="-109.0" prefHeight="627.0" prefWidth="609.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#addPhoto" text="Add Photo" />
+                        <MenuItem mnemonicParsing="false" onAction="#cutPhoto" text="Cut" />
+                        <MenuItem mnemonicParsing="false" onAction="#copyPhoto" text="Copy" />
+                        <MenuItem mnemonicParsing="false" onAction="#pastePhoto" text="Paste Photo" />
+                        <MenuItem mnemonicParsing="false" onAction="#closeAlbum" text="Close Album" />
+                        <MenuItem mnemonicParsing="false" onAction="#logOff" text="Log Off" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem onAction="#deletePhoto" mnemonicParsing="false" text="Remove Photo" />
+                        <MenuItem onAction="#editCaption" mnemonicParsing="false" text="Edit Caption" />
+                        <MenuItem onAction="#addTag" mnemonicParsing="false" text="Add Tag" />
+                        <MenuItem onAction="#removeTag" mnemonicParsing="false" text="Remove Tag" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="View">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#openPhoto" text="View Photo" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Search">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#searchPhotoDate" text="Search by Date" />
+                        <MenuItem mnemonicParsing="false" onAction="#searchPhotoTags" text="Search by Tags" />
+                        <MenuItem mnemonicParsing="false" onAction="#createNewAlbum" text="Create New Album" />
+                        <MenuItem mnemonicParsing="false" onAction="#clearSearchResults" text="Clear Search Results" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" onAction="#help" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <TableView fx:id="photoTable" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="thumbnailColumn" prefWidth="149.0" resizable="false" text="Thumbnail" />
+                <TableColumn fx:id="captionColumn" minWidth="0.0" prefWidth="164.0" resizable="false" text="Caption" />
+                  <TableColumn fx:id="tagsColumn" prefWidth="132.0" resizable="false" text="Tags" />
+                  <TableColumn fx:id="dateColumn" maxWidth="163.0" minWidth="-1.0" prefWidth="163.0" text="Date" />
+              </columns>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </TableView>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
